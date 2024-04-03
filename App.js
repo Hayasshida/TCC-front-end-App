@@ -2,13 +2,16 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ImageBackground, Platform } from 'react-native';
 import FormContent from './src/components/FormContent';
+// Viram variáveis/Tags/e fica mais limpo
+import FundoSolido from './src/components/img/fundo-gradiente.jpg'
+import FundoTransparente from './src/components/img/fundo-gradiente.png'
 
 export default function App() {
   const isMobile = Platform.OS === 'android' || Platform.OS === 'ios'
   
   return (
     <ImageBackground
-      source={isMobile ? require('./src/components/img/fundo-gradiente.png') : require('./src/components/img/fundo-gradiente.jpg') }
+      source={isMobile ? FundoSolido : FundoTransparente }
       style={styles.bgImage}  
     >
       <View style={styles.container}>
